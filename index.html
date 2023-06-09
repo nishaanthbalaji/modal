@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="modal" />
+    <title>Document</title>
+  </head>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      height: 100vh;
+      background: url(./pexels-max-rahubovskiy-6284235.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+    .box {
+      height: 200px;
+      width: 400px;
+      background-color: rgba(255, 255, 255, 0.582);
+      border-radius: 10px;
+      padding-top: 20px;
+      padding-left: 80px;
+    }
+    .click {
+      height: 35px;
+      width: 150px;
+      background-color: blue;
+      border-radius: 10px;
+      padding-left: 50px;
+      padding-top: 10px;
+      border: 2px solid blue;
+      cursor: pointer;
+      margin-left: 40px;
+    }
+    section {
+      padding-top: 200px;
+      padding-left: 500px;
+    }
+    .click:hover {
+      background-color: white;
+      color: darkblue;
+    }
+    .content {
+      /* background-color: rgba(0, 0, 0, 0.3); */
+      background-color: rgba(46, 42, 42, 0.582);
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* background-color: rgba(255, 255, 255, 0.582); */
+      opacity: 0;
+      pointer-events: none;
+    }
+    .display {
+      display: flex;
+      justify-content: space-between;
+      /* background-color: rgba(46, 42, 42, 0.582); */
+      background-color: rgba(255, 255, 255, 0.582);
+      height: 300px;
+      width: 400px;
+    }
+    i {
+      font-size: 50px;
+      margin-right: 10px;
+    }
+    .show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    i:hover {
+      cursor: pointer;
+    }
+  </style>
+  <body>
+    <section>
+      <div class="box">
+        <p style="font-size: 30px">MODEL PROJECT</p>
+        <div class="click">CLICK</div>
+      </div>
+      <div class="content">
+        <div class="display">
+          <p
+            style="
+              color: BLUE;
+              font-size: 30px;
+              padding-top: 30px;
+              padding-left: 70px;
+            "
+          >
+            MODEL CONTENT
+          </p>
+          <i id="close" class="fa-sharp fa-solid fa-xmark"></i>
+        </div>
+      </div>
+    </section>
+    <script>
+      let click = document.querySelector(".click");
+      let close = document.querySelector("#close");
+      let content = document.querySelector(".content");
+      click.addEventListener("click", () => {
+        content.classList.add("show");
+      });
+      close.addEventListener("click", () => {
+        content.classList.remove("show");
+      });
+    </script>
+  </body>
+</html>
